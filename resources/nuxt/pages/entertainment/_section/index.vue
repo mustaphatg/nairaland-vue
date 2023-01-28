@@ -7,7 +7,7 @@ export default {
     layout: "entertainment",
 
     head: {
-        title: "Entertainment",
+        title: "Nairaland -- Entertainment",
     },
 
     data() {

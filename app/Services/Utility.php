@@ -221,7 +221,12 @@ class Utility {
 
                 // author of blockquote
                     $block_quote_author = $block_quote->filter('a')->eq(0);
-                    $block_quote_author = $block_quote_author->text();
+
+                    try {
+                        $block_quote_author = $block_quote_author->text();
+                    }catch(\Throwable $e){ 
+                        $block_quote_author = '__';
+                    }
 
                 // blockquote object
                     $o = (object)[
@@ -272,82 +277,90 @@ class Utility {
 	
 	
 	public function topic($slug){
-		$crawl = $this->scrapeRequest->get($slug);
-		
-		// $crawl = new Crawler(file_get_contents("to.html"));
-		
-		$table = $crawl->filter("table[summary=posts]");      
-		
-		$object = new \stdClass();
-		
-		if($table->count() > 0){
-			$tr = $table->filter("tr");
-			
-			// get topic and creator
-				$topic = $tr->eq(0);
-				
-				// title 
-					$links = $topic->filter("a");
-					$title = $links->eq(3);
-					$object->title = $title->text();
-					
-				// creator 
-				$creator = $links->eq(4);
-				$object->creator = $creator->text();
-			
-			
-			// post body
-				$body = $tr->eq(1);
-				$post = $body->filter(".narrow");
-				$object->body = $post->html();
-			
-			// post images
-				$img = $body->filter("p img");
-				$img_array = [];
-				
-				if($img->count() > 0){
-					foreach($img as $el){
-						$img_array[] = $el->getAttribute("src");     
-					}
-				}
-				// assign image
-				$object->images = $img_array;
-				
-				
-			//replies
-			$replies = [];
-				foreach($tr as $key => $value){
-					
-					if($key == 1 || $key ==0){
-						continue;
-					}
-					
-					if(($key % 2) != 0){
-						continue;
-					}
-					
-					
-					$current_row = $value;
-					$next_row = $tr->eq($key + 1);
-						
-					$reply = $this->formatReply($current_row , $next_row , $tr);      		
-					
-					if($reply != null){
-						$replies[] = $reply;
-					}
-				}
 
-			
-			//assign replies
-			$object->replies = $replies;
-				
-			return $object;
-		}
-		else
-		{
-			echo 88;
-		}
+        try {
+
+        
+            $crawl = $this->scrapeRequest->get($slug);
+            
+            // $crawl = new Crawler(file_get_contents("to.html"));
+            
+            $table = $crawl->filter("table[summary=posts]");      
+            
+            $object = new \stdClass();
+            
+            if($table->count() > 0){
+                $tr = $table->filter("tr");
+                
+                // get topic and creator
+                    $topic = $tr->eq(0);
+                    
+                    // title 
+                        $links = $topic->filter("a");
+                        $title = $links->eq(3);
+                        $object->title = $title->text();
+                        
+                    // creator 
+                    $creator = $links->eq(4);
+                    $object->creator = $creator->text();
+                
+                
+                // post body
+                    $body = $tr->eq(1);
+                    $post = $body->filter(".narrow");
+                    $object->body = $post->html();
+                
+                // post images
+                    $img = $body->filter("p img");
+                    $img_array = [];
+                    
+                    if($img->count() > 0){
+                        foreach($img as $el){
+                            $img_array[] = $el->getAttribute("src");     
+                        }
+                    }
+                    // assign image
+                    $object->images = $img_array;
+                    
+                    
+                //replies
+                $replies = [];
+                    foreach($tr as $key => $value){
+                        
+                        if($key == 1 || $key ==0){
+                            continue;
+                        }
+                        
+                        if(($key % 2) != 0){
+                            continue;
+                        }
+                        
+                        
+                        $current_row = $value;
+                        $next_row = $tr->eq($key + 1);
+                            
+                        $reply = $this->formatReply($current_row , $next_row , $tr);      		
+                        
+                        if($reply != null){
+                            $replies[] = $reply;
+                        }
+                    }
+
+                
+                //assign replies
+                $object->replies = $replies;
+                    
+                return $object;
+            }
+            else
+            {
+                echo 88;
+            }
 		
+        }catch(\Exception $e){
+            return false;
+        }
+
     }
 	
 	

@@ -10,11 +10,11 @@
         </p>
 
         <!-- loading error -->
-        <p v-if="$fetchState.error">An error occured</p>
+        <p v-if="$fetchState.error" class="text-red-900 font-bold text-center mt-10">An error occured while fetching this page !!!</p>
 
 
         <!-- topic -->
-        <div v-if="!$fetchState.pending">
+        <div v-if="topic">
 
             <!-- header -->
             <div class=" topic_detail bg-white border  my-5 shadow rounded p-5 " >
@@ -109,7 +109,7 @@ export default {
 
     data() {
         return {
-            topic : {},
+            topic : null,
             // topic  : tt,
             loading: true,
             size: "50px",
@@ -126,14 +126,15 @@ export default {
         '$route.query': '$fetch'
     },
 
-    async fetch() {
+     async fetch() {
+
         var dd = await this.$axios.post("/api/topic", {
             topic_url : this.$route.query.q,
-        });
+        })
+    
+         this.topic = await dd.data
 
-        this.topic = await dd.data
-
-    },
+    }
 
 
 };
@@ -165,10 +166,10 @@ export default {
     }
 
 
-   /* hide the first link in quote which is the username, because it has been extracted */
-   .reply_with_quote .quote a:first-child::after{
-        display: none;
-   }
+    /* align faces image side by side */
+    img.faces, img[src='/faces/huh.png'] {
+        display: inline-block;
+    }
 
 </style>
 

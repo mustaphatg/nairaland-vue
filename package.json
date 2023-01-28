@@ -7,6 +7,7 @@
     "dependencies": {
         "daisyui": "^2.49.0",
         "laravel-nuxt": "^2.0.2",
+        "numeral": "^2.0.6",
         "v-viewer": "^1.6.4",
         "vue-smooth-scrollbar": "^1.0.3",
         "vue-spinner": "^1.0.4",

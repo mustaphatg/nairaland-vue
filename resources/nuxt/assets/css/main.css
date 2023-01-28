@@ -25,15 +25,15 @@
 }
 
 body {
-    @apply bg-zinc-100
+    @apply bg-gray-300
 }
 
 .menu .nuxt-link-active{
-    @apply bg-green-500 font-bold text-white rounded-lg
+    @apply bg-green-800 font-bold text-white rounded-lg
 }
 
 .menu .nuxt-link-exact-active {
-    @apply bg-green-500 font-bold text-white rounded-lg
+    @apply bg-green-800 font-bold text-white rounded-lg
 }
 
 

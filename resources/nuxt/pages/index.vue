@@ -39,6 +39,10 @@ import ClipLoader from "vue-spinner/src/ClipLoader.vue";
 
 export default {
 
+    head : {
+        title : 'Nairaland -- Home'
+    },
+
     components : {
         ClipLoader
     },

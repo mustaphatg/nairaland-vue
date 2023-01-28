@@ -49,6 +49,11 @@ class NairalandController extends Controller{
 		}
 		
 		$result = $this->utility->topic($topic_url);
+
+        if(!$result){
+            return  response()->json(['error' => 'An error occured when scrpaing this post'], 500);
+        }
+
 		return response()->json($result);
 	}
 	

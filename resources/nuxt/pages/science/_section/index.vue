@@ -10,7 +10,7 @@ export default {
     layout : 'science',
 
     head : {
-        title : 'Science'
+        title : 'Nairaland -- Science'
     },
 
      data(){

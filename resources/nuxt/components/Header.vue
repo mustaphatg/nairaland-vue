@@ -1,10 +1,10 @@
 <template>
 
 
-    <div class="navbar bg-green-800 bg-blend-lighten   shadow " >
+    <div class="navbar bg-white    shadow " >
 
         <!-- toggle drawer -->
-        <div class="flex-none  lg:hidden text-white">
+        <div class="flex-none font-bold lg:hidden text-green-900">
             <label for="my-drawer" class="btn btn-square btn-ghost  drawer-button">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@
         </div>
 
         <div class="flex-1">
-            <a class="btn btn-ghost normal-case text-xl font-bold text-white font-sans">Nairaland-vue</a>
+            <a class="btn btn-ghost normal-case text-2xl  font-bold  font-sans">Nairaland</a>
         </div>
 
 

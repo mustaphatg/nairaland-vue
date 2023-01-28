@@ -22,8 +22,8 @@
 
                 <div class="flex mt-3  justify-center font-small text-zinc-800 font-mono">
                     <span class=" btn-ghost btn-sm"> Author: {{topic.creator}}</span>
-                    <span class=" btn-ghost btn-sm"> {{topic.views}} views </span>
-                    <span class=" btn-ghost btn-sm"> {{topic.replies}} replies</span>
+                    <span class=" btn-ghost btn-sm"> {{mFormat(topic.views, '0.0a')}} views </span>
+                    <span class=" btn-ghost btn-sm"> {{mFormat(topic.replies, '0.a')}} replies</span>
                 </div>
             </NuxtLink>
 
@@ -37,6 +37,7 @@
 
 
 <script>
+import numeral from 'numeral'
 import ClipLoader from "vue-spinner/src/ClipLoader.vue";
 
 export default {
@@ -67,6 +68,12 @@ export default {
         this.topics = await dd.data
 
     },
+
+    methods : {
+        mFormat(n, m){
+            return numeral(n).format(m)
+        }
+    }
 
 
 };

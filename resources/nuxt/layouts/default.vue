@@ -18,7 +18,7 @@
                 <!-- page content -->
                 <smooth-scrollbar class="flex-1">
                     <Nuxt
-                        keep-alive
+                        keep-alive keep-alive-props="{ max: 10 }"
                         class="flex-1 h-full p-4 lg:overflow-auto overflow-scroll"
                     />
                 </smooth-scrollbar>
