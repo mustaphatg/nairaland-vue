@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+/* remove blue from link */
+.menu li:active, a:active{
+    @apply bg-neutral-300 text-black;
+}
+
+
+/* remove green color when topic is active */
+.topic:active{
+    @apply bg-neutral-300
+}
+
+
+
+/* change hover color */
+.menu li:hover{
+    @apply bg-neutral-300 font-semibold  rounded-lg
+}
+
+body {
+    @apply bg-zinc-100
+}
+
+.menu .nuxt-link-active{
+    @apply bg-green-500 font-bold text-white rounded-lg
+}
+
+.menu .nuxt-link-exact-active {
+    @apply bg-green-500 font-bold text-white rounded-lg
+}
+
+
+/* right nav of desktop */
+.right_desktop_nav {
+    @apply bg-white shadow-md border mt-4 rounded-box p-2
+}
+
+
+/* right_desktop_nav_parent in layouts */
+.right_desktop_nav_parent{
+
+}
