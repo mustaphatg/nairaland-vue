@@ -12,11 +12,24 @@
 
 
 <script>
+
+
+import {section} from '../data/section.js'
+
 export default {
     
     mounted(){
         // console.log('fetching secion')
-    }
+    },
+
+
+    data(){
+        return {
+            general : section.general,
+            entertainment : section.entertainment,
+            science : section.science
+        }
+    },
 
 }
 </script>
