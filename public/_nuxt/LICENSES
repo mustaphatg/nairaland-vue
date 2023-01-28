@@ -1,4 +1,15 @@
 /*!
+ * Viewer.js v1.11.2
+ * https://fengyuanchen.github.io/viewerjs
+ *
+ * Copyright 2015-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2023-01-01T10:14:49.638Z
+ */
+
+
+/*!
  * cast `I.Scrollbar` to `Scrollbar` to avoid error
  *
  * `I.Scrollbar` is not assignable to `Scrollbar`:
@@ -36,18 +47,16 @@ PERFORMANCE OF THIS SOFTWARE.
 
 
 /*!
- * Viewer.js v1.11.2
- * https://fengyuanchen.github.io/viewerjs
- *
- * Copyright 2015-present Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2023-01-01T10:14:49.638Z
- */
-
-
-/*!
  * Vue.js v2.7.14
  * (c) 2014-2022 Evan You
  * Released under the MIT License.
+ */
+
+
+/*! @preserve
+ * numeral.js
+ * version : 2.0.6
+ * author : Adam Draper
+ * license : MIT
+ * http://adamwdraper.github.com/Numeral-js/
  */

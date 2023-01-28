@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{222:function(n,e,t){"use strict";t.r(e);var c={layout:"science",mounted:function(){this.$router.push("/science/programming")}},o=t(2),component=Object(o.a)(c,(function(){return(0,this._self._c)("div")}),[],!1,null,null,null);e.default=component.exports}}]);
