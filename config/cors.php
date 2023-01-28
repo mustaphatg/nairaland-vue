@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('API_ORIGIN'), 'https://nairaland1.netlify.app'],
+    'allowed_origins' => ['https://nairaland1.netlify.app'],
 
     'allowed_origins_patterns' => [],
 
