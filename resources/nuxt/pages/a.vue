@@ -19,6 +19,12 @@ export default {
         return {
             nn : numeral(4325).format('0.0a')
         }
+    },
+
+    mounted(){
+        fetch('/api/home')
+        .then(r => r.json())
+        .then(d => console.log(d))
     }
 
 }

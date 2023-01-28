@@ -7,7 +7,7 @@
             <Header></Header>
 
             <!-- custom div -->
-            <div  class="w-full lg:w-5/6 mx-auto h-full flex  justify-center lg:flex">
+            <div  class="w-full lg:w-5/6   mx-auto h-full flex  justify-center lg:flex">
 
                 <!-- desktop nav -->
                 <div class="w-3/12 h-full rounded-md p-3 hidden lg:block">
