@@ -281,9 +281,9 @@ class Utility {
         try {
 
         
-            // $crawl = $this->scrapeRequest->get($slug);
+            $crawl = $this->scrapeRequest->get($slug);
             
-            $crawl = new Crawler(file_get_contents("to.html"));
+            // $crawl = new Crawler(file_get_contents("to.html"));
             
             $table = $crawl->filter("table[summary=posts]");      
             
