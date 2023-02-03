@@ -1,4 +1,4 @@
-<img src="https://github.com/mustaphatg/nairaland-vue/blob/main/1.png" >
+<img src="https://github.com/mustaphatg/nairaland-vue/blob/main/nairaland.png" >
 This is a Laravel app that serves as the back-end and also provides api to https://nairaland.mustapha.com.ng and https://nairaland1.netlify.app 
 
 
